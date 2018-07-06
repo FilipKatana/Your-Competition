@@ -45,17 +45,8 @@ class file:
 
 f = file("DirectoryObject.py", os.getcwd(), "V", "iuoij")
 f.backup()
-"""
-n = open("UUU.txt", "wb")
-n.write(f.get_bytes())
-n.close()
-"""
 
 
-
-class folder:
-    def __init__(self):
-        pass
 
 
 
