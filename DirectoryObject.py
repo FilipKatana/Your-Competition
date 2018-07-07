@@ -16,7 +16,7 @@ class file:
 
 
     def backup(self):
-        p = self.path + "\\.backups" + str(self.version_name)
+        p = self.path + "\\.backups"
 
         if not(os.path.isdir(p)):
             os.mkdir(p)
