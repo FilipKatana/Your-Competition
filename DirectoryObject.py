@@ -52,6 +52,12 @@ class file:
         f2.close()
 
 
+    def getPath(self):
+        return self.path
+
+    
+
+
 
     def get_bytes(self):
         f = open(self.path + "\\" + self.name_with_extension, "rb")
