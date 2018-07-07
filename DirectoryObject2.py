@@ -34,40 +34,58 @@ class file:
 
 
 def backup(path, file_name, version_name):
+    
+    
+    
     p = path + "\\.backups"
 
     if not(os.path.isdir(p)):
         os.mkdir(p)
         hid.hide(p)
+        
+        
+     
+    if not(os.path.isdir(os.path.join(path, file_name))):
+        #r
+        p += "\\" + file_name[:-3]
 
-    p += "\\" + file_name[:-3]
+
+            
+    else:
+        p = os.path.join(p, file_name)
+        
+    if not(os.path.isdir(p)):
+        os.mkdir(p)
+            
+    p = os.path.join(p, version_name)
+
+
+    
+
 
     if not(os.path.isdir(p)):
         os.mkdir(p)
 
 
-    p += "\\" + str(version_name)
-
-
-    if not(os.path.isdir(p)):
-        os.mkdir(p)
-
-
-    p += "\\" + file_name
+    p = os.path.join(p, file_name)
 
     print(p)
 
+    if os.path.isdir(os.path.join(path, file_name)):
+        #Ovde uraditi shutil kopiranje
+        print("This option doesnt exist yet.")
+        pass
+    
+    else:
+        f1 = open(path + "\\" + file_name, "rb")
+        f2 = open(p, "wb")
 
+        file_data = f1.read()
 
-    f1 = open(path + "\\" + file_name, "rb")
-    f2 = open(p, "wb")
+        f2.write(file_data)
 
-    file_data = f1.read()
-
-    f2.write(file_data)
-
-    f1.close()
-    f2.close()
+        f1.close()
+        f2.close()
 
 
 
