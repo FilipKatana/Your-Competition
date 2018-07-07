@@ -22,7 +22,24 @@ class file:
             os.mkdir(p)
             hid.hide(p)
 
+        p += "\\" + self.name_with_extension[:-3]
+
+        if not(os.path.isdir(p)):
+            os.mkdir(p)
+
+
+        p += "\\" + str(self.version_name)
+
+
+        if not(os.path.isdir(p)):
+            os.mkdir(p)
+
+
         p += "\\" + self.name_with_extension
+
+        print(p)
+
+        
 
         f1 = open(self.path + "\\" + self.name_with_extension, "rb")
         f2 = open(p, "wb")
@@ -43,8 +60,7 @@ class file:
         return b
 
 
-f = file("DirectoryObject.py", os.getcwd(), "V", "iuoij")
-f.backup()
+
 
 
 
